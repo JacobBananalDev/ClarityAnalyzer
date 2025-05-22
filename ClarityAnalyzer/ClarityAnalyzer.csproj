@@ -59,6 +59,7 @@
     <Compile Include="Base\SingletonBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Models\ImageProcessor.cs" />
+    <Compile Include="Services\FileService.cs" />
     <Compile Include="ViewModels\ClarityAnalyzerViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
