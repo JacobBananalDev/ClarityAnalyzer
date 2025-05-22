@@ -64,6 +64,8 @@
     <Compile Include="Models\ImageProcessor.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="ViewModels\ClarityAnalyzerViewModel.cs" />
+    <Compile Include="ViewModels\ClarityAnalyzerViewModel_Commands.cs" />
+    <Compile Include="ViewModels\ClarityAnalyzerViewModel_Properties.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

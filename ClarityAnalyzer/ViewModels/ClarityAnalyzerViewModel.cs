@@ -2,7 +2,7 @@
 
 namespace ClarityAnalyzer.ViewModels
 {
-    public class ClarityAnalyzerViewModel : ViewModelBase
+    public partial class ClarityAnalyzerViewModel : ViewModelBase
     {
         private static ClarityAnalyzerViewModel m_Instance = null;
         internal static ClarityAnalyzerViewModel Instance
