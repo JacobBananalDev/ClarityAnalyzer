@@ -1,4 +1,5 @@
 ﻿using ClarityAnalyzer.Base;
+using ClarityAnalyzer.Helpers;
 using System.Drawing;
 
 namespace ClarityAnalyzer.Models
@@ -43,6 +44,31 @@ namespace ClarityAnalyzer.Models
                 }
             }
             return result;
+        }
+
+        internal Bitmap ApplySharpen(Bitmap source)
+        {
+            return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.Sharpen3x3);
+        }
+
+        internal Bitmap ApplyBoxBlur(Bitmap source)
+        {
+            return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.BoxBlur3x3);
+        }
+
+        internal Bitmap ApplyGaussianBlur(Bitmap source)
+        {
+            return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.GaussianBlur3x3);
+        }
+
+        internal Bitmap ApplyEdgeDetectHorizontal(Bitmap source)
+        {
+            return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.EdgeDetectHorizontal3x3);
+        }
+
+        internal Bitmap ApplyEdgeDetectVertical(Bitmap source)
+        {
+            return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.EdgeDetectVertical3x3);
         }
 
     }

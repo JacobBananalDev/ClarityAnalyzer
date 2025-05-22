@@ -1,4 +1,5 @@
 ﻿using ClarityAnalyzer.Base;
+using System.Collections.ObjectModel;
 
 namespace ClarityAnalyzer.ViewModels
 {
@@ -19,7 +20,16 @@ namespace ClarityAnalyzer.ViewModels
 
         private ClarityAnalyzerViewModel()
         {
-            // Initialize properties here if needed
+            AvailableFilters = new ObservableCollection<string>
+            {
+                "Sharpen",
+                "Box Blur",
+                "Gaussian Blur",
+                "Edge Detect - Horizontal",
+                "Edge Detect - Vertical"
+            };
+
+            SelectedFilter = AvailableFilters[0];
         }
     }
 }

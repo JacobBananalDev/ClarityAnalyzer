@@ -1,4 +1,6 @@
 ﻿using ClarityAnalyzer.Commands;
+using ClarityAnalyzer.Helpers;
+using ClarityAnalyzer.Models;
 using ClarityAnalyzer.Services;
 using System.Drawing;
 
@@ -21,6 +23,7 @@ namespace ClarityAnalyzer.ViewModels
                         {
                             m_OriginalBitmap = (Bitmap)loadedBitmap.Clone();
                             m_CurrentBitmap = loadedBitmap;
+                            ImageViewer = ImageHelper.ToBitMapImage(m_CurrentBitmap);
                         }
                     });
                 }
@@ -37,8 +40,14 @@ namespace ClarityAnalyzer.ViewModels
                 {
                     m_SaveImageCommand = new RelayCommand((obj) =>
                     {
-                        // Save image logic here
-                        // For example, open a save file dialog and save the current image
+                        if (m_CurrentBitmap != null)
+                        {
+                            FileService.SaveImageToDialog(m_CurrentBitmap);
+                        }
+                        else
+                        {
+                            // TODO: Add status or error message here that will display on the UI
+                        }
                     });
                 }
                 return m_SaveImageCommand;
@@ -54,8 +63,41 @@ namespace ClarityAnalyzer.ViewModels
                 {
                     m_ApplyFiltersCommand = new RelayCommand((obj) =>
                     {
-                        // Apply filters logic here
-                        // For example, apply selected filters to the image
+                        if (m_CurrentBitmap == null)
+                        {
+                            // TODO: Add status or error message here that will display on the UI
+                            return;
+                        }
+
+                        if (string.IsNullOrEmpty(SelectedFilter))
+                        {
+                            // TODO: Add status or error message here that will display on the UI
+                            return;
+                        }
+
+                        switch (SelectedFilter)
+                        {
+                            case "Sharpen":
+                                m_CurrentBitmap = ImageProcessor.Instance.ApplySharpen(m_CurrentBitmap);
+                                break;
+                            case "Box Blur":
+                                m_CurrentBitmap = ImageProcessor.Instance.ApplyBoxBlur(m_CurrentBitmap);
+                                break;
+                            case "Gaussian Blur":
+                                m_CurrentBitmap = ImageProcessor.Instance.ApplyGaussianBlur(m_CurrentBitmap);
+                                break;
+                            case "Edge Detect - Horizontal":
+                                m_CurrentBitmap = ImageProcessor.Instance.ApplyEdgeDetectHorizontal(m_CurrentBitmap);
+                                break;
+                            case "Edge Detect - Vertical":
+                                m_CurrentBitmap = ImageProcessor.Instance.ApplyEdgeDetectVertical(m_CurrentBitmap);
+                                break;
+                            default:
+                                // TODO: Add status or error message here that will display on the UI
+                                break;
+                        }
+
+                        ImageViewer = ImageHelper.ToBitMapImage(m_CurrentBitmap);
                     });
                 }
                 return m_ApplyFiltersCommand;

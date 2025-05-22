@@ -21,13 +21,7 @@
             <Separator Margin="0 10"/>
 
             <TextBlock Text="Filters:" FontWeight="Bold" Margin="0 5"/>
-            <Controls:ClarityAnalyzerComboBox x:Name="FilterSelector" Width="160" Margin="0 5">
-                <Controls:ClarityAnalyzerComboBoxItem Content="Sharpen"/>
-                <Controls:ClarityAnalyzerComboBoxItem Content="Box Blur"/>
-                <Controls:ClarityAnalyzerComboBoxItem Content="Gaussian Blur"/>
-                <Controls:ClarityAnalyzerComboBoxItem Content="Edge Detect - Horizontal"/>
-                <Controls:ClarityAnalyzerComboBoxItem Content="Edge Detect - Vertical"/>
-            </Controls:ClarityAnalyzerComboBox>
+            <Controls:ClarityAnalyzerComboBox ItemsSource="{Binding AvailableFilters}" SelectedItem="{Binding SelectedFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="160" Margin="0 5"/>
 
             <Controls:ClarityAnalyzerButton Content="Apply Filter" Margin="0 5" Command="{Binding ApplyFiltersCommand}"/>
         </StackPanel>
@@ -35,7 +29,7 @@
         <!-- RIGHT PANEL: Image Preview -->
         <Border Grid.Column="1" Margin="10" BorderBrush="Gray" BorderThickness="1">
             <Controls:ClarityAnalyzerScrollViewer>
-                <Image x:Name="ImageViewer" Stretch="Uniform"/>
+                <Image Source="{Binding ImageViewer, Mode=OneWay}" Stretch="Uniform"/>
             </Controls:ClarityAnalyzerScrollViewer>
         </Border>
     </Grid>
