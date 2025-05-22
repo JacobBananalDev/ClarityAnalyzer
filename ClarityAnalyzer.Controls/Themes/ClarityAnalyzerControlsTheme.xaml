@@ -3,5 +3,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerButtonTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerComboBoxTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerScrollViewerTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

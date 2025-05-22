@@ -53,12 +53,23 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Controls\ClarityAnalyzerButton.cs" />
+    <Page Include="Themes\ClarityAnalyzerComboBoxTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\ClarityAnalyzerControlsTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ClarityAnalyzerScrollViewerTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ClarityAnalyzerComboBox.cs" />
+    <Compile Include="Controls\ClarityAnalyzerComboBoxItem.cs" />
+    <Compile Include="Controls\ClarityAnalyzerScrollViewer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
