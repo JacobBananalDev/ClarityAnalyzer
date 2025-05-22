@@ -61,6 +61,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Helpers\ConvolutionHelper.cs" />
     <Compile Include="Helpers\ConvolutionKernal.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Models\ImageProcessor.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="ViewModels\ClarityAnalyzerViewModel.cs" />
