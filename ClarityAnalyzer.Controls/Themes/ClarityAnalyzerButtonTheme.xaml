@@ -4,11 +4,10 @@
     xmlns:controls="clr-namespace:ClarityAnalyzer.Controls">
     
     <Style TargetType="{x:Type controls:ClarityAnalyzerButton}">
-        <Setter Property="Height" Value="50"/>
         <Setter Property="Background" Value="#FF103F91"/>
+        <Setter Property="Padding" Value="5"/>
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="21"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">

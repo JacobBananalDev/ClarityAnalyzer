@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="Base\SingletonBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Helpers\ConvolutionHelper.cs" />
     <Compile Include="Helpers\ConvolutionKernal.cs" />
     <Compile Include="Models\ImageProcessor.cs" />
