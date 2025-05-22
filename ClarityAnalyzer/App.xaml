@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:ClarityAnalyzer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerControlsTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

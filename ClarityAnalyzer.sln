@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarityAnalyzer", "ClarityAnalyzer\ClarityAnalyzer.csproj", "{F68A5753-6781-4098-AF0E-11AE5E7DA660}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClarityAnalyzer.Controls", "ClarityAnalyzer.Controls\ClarityAnalyzer.Controls.csproj", "{5E7EA96B-F65B-4389-888F-C49A6D4B3A31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F68A5753-6781-4098-AF0E-11AE5E7DA660}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F68A5753-6781-4098-AF0E-11AE5E7DA660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F68A5753-6781-4098-AF0E-11AE5E7DA660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7EA96B-F65B-4389-888F-C49A6D4B3A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7EA96B-F65B-4389-888F-C49A6D4B3A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7EA96B-F65B-4389-888F-C49A6D4B3A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7EA96B-F65B-4389-888F-C49A6D4B3A31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
