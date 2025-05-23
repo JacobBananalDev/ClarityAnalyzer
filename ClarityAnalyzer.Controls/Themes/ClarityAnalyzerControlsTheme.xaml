@@ -5,5 +5,7 @@
         <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerButtonTheme.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerComboBoxTheme.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerScrollViewerTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerSliderTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ClarityAnalyzer.Controls;component/Themes/ClarityAnalyzerTabControlTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
