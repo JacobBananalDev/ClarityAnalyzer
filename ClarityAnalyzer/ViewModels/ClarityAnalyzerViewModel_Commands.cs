@@ -3,6 +3,7 @@ using ClarityAnalyzer.Helpers;
 using ClarityAnalyzer.Models;
 using ClarityAnalyzer.Services;
 using System.Drawing;
+using System.Windows;
 
 namespace ClarityAnalyzer.ViewModels
 {
@@ -51,6 +52,29 @@ namespace ClarityAnalyzer.ViewModels
                     });
                 }
                 return m_SaveImageCommand;
+            }
+        }
+
+        private RelayCommand m_ResetImageCommand = null;
+        public RelayCommand ResetImageCommand
+        {
+            get
+            {
+                if (m_ResetImageCommand == null)
+                {
+                    m_ResetImageCommand = new RelayCommand((obj) =>
+                    {
+                        if (m_OriginalBitmap == null)
+                        {
+                            //MessageBox.Show("No original image loaded.");
+                            return;
+                        }
+
+                        m_CurrentBitmap = (Bitmap)m_OriginalBitmap.Clone();
+                        ImageViewer = ImageHelper.ToBitMapImage(m_CurrentBitmap);
+                    });
+                }
+                return m_ResetImageCommand;
             }
         }
 
