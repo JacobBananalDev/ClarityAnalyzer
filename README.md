@@ -1,8 +1,3 @@
-Here's how to finish and polish your `README.md` for ClarityAnalyzer:
-
----
-
-````markdown
 # ClarityAnalyzer
 
 ClarityAnalyzer is a Windows desktop application built with WPF (.NET Framework 4.8.1) that allows users to load, analyze, and enhance images using essential image processing tools. It is designed for clarity inspection, scan quality checks, and prototype imaging use cases.
@@ -61,7 +56,7 @@ cd ClarityAnalyzer
 * Run `setup.exe`
 * No installation required
 
-> .NET Framework 4.8.1 required (preinstalled on most Windows 10/11 systems)
+> ⚠️ .NET Framework 4.8.1 required (preinstalled on most Windows 10/11 systems)
 
 ---
 
@@ -78,15 +73,3 @@ cd ClarityAnalyzer
 
 Made with ❤️ by [Jacob Bananal](https://github.com/JacobBananalDev)
 
----
-
-## 📄 License
-
-MIT License (optional – add one if needed)
-
-```
-
----
-
-Would you like a markdown badge (e.g., `.NET Version`, `GitHub Release`, etc.) added to the top of the README?
-```
