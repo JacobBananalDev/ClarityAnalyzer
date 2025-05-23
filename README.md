@@ -4,6 +4,10 @@ ClarityAnalyzer is a Windows desktop application built with WPF (.NET Framework 
 
 ---
 
+![ClarityAnalyzer Preview](./assets/clarity-analyzer-preview.png)
+
+---
+
 ## ✨ Features
 
 - 🖼 Load and preview images (JPG, PNG, BMP)
