@@ -71,5 +71,48 @@ namespace ClarityAnalyzer.Models
             return ConvolutionHelper.ApplyConvolution(source, ConvolutionKernel.EdgeDetectVertical3x3);
         }
 
+        /// <summary>
+        /// Applies brightness and contrast adjustments to a bitmap.
+        /// Brightness: [-100, 100] where 0 is no change.
+        /// Contrast: [-100, 100] where 0 is no change.
+        /// </summary>
+        internal Bitmap ApplyAdjustments(Bitmap source, int brightness, int contrast)
+        {
+            Bitmap adjusted = new Bitmap(source.Width, source.Height);
+
+            float b = brightness / 100f * 255f;
+            float c = (100f + contrast) / 100f;
+            c *= c;
+
+            for (int y = 0; y < source.Height; y++)
+            {
+                for (int x = 0; x < source.Width; x++)
+                {
+                    Color original = source.GetPixel(x, y);
+
+                    float r = original.R / 255f;
+                    float g = original.G / 255f;
+                    float bVal = original.B / 255f;
+
+                    r = (((r - 0.5f) * c) + 0.5f) * 255f + b;
+                    g = (((g - 0.5f) * c) + 0.5f) * 255f + b;
+                    bVal = (((bVal - 0.5f) * c) + 0.5f) * 255f + b;
+
+                    int rInt = Clamp((int)r);
+                    int gInt = Clamp((int)g);
+                    int bInt = Clamp((int)bVal);
+
+                    adjusted.SetPixel(x, y, Color.FromArgb(rInt, gInt, bInt));
+                }
+            }
+
+            return adjusted;
+        }
+
+        private int Clamp(int val)
+        {
+            return val < 0 ? 0 : (val > 255 ? 255 : val);
+        }
+
     }
 }

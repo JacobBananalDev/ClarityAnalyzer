@@ -4,6 +4,7 @@ using ClarityAnalyzer.Models;
 using ClarityAnalyzer.Services;
 using System.Drawing;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ClarityAnalyzer.ViewModels
 {
@@ -70,6 +71,9 @@ namespace ClarityAnalyzer.ViewModels
                             return;
                         }
 
+                        BrightnessValue = 0;
+                        ContrastValue = 0;
+
                         m_CurrentBitmap = (Bitmap)m_OriginalBitmap.Clone();
                         ImageViewer = ImageHelper.ToBitMapImage(m_CurrentBitmap);
                     });
@@ -125,6 +129,23 @@ namespace ClarityAnalyzer.ViewModels
                     });
                 }
                 return m_ApplyFiltersCommand;
+            }
+        }
+
+        private RelayCommand m_AdjustmentsDebouncedCommand;
+        public RelayCommand AdjustmentsDebouncedCommand
+        {
+            get
+            {
+                if (m_AdjustmentsDebouncedCommand == null)
+                {
+                    m_AdjustmentsDebouncedCommand = new RelayCommand((obj) =>
+                    {
+                        if (m_CurrentBitmap != null)
+                            ImageViewer = ImageHelper.ToBitMapImage(ApplyAllAdjustments());
+                    });
+                }
+                return m_AdjustmentsDebouncedCommand;
             }
         }
     }

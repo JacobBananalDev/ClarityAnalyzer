@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClarityAnalyzer"
         xmlns:Controls="clr-namespace:ClarityAnalyzer.Controls;assembly=ClarityAnalyzer.Controls"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="ClarityAnalyzer" Height="600" Width="900">
     <Grid Background="#E3E7ED">
@@ -35,10 +36,22 @@
                         <Controls:ClarityAnalyzerButton Content="Apply Filter" Margin="0 5" Command="{Binding ApplyFiltersCommand}"/>
 
                         <TextBlock Text="Brightness" FontWeight="Bold" Margin="10 10 0 5"/>
-                        <Controls:ClarityAnalyzerSlider Minimum="0" Maximum="100" Value="0" />
+                        <Controls:ClarityAnalyzerSlider Minimum="0" Maximum="100" Value="{Binding BrightnessValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="DebouncedValueChanged">
+                                    <i:InvokeCommandAction Command="{Binding AdjustmentsDebouncedCommand}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Controls:ClarityAnalyzerSlider>
 
                         <TextBlock Text="Contrast" FontWeight="Bold" Margin="10 5 0 5"/>
-                        <Controls:ClarityAnalyzerSlider Minimum="0" Maximum="100" Value="0" />
+                        <Controls:ClarityAnalyzerSlider Minimum="0" Maximum="100" Value="{Binding ContrastValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="DebouncedValueChanged">
+                                    <i:InvokeCommandAction Command="{Binding AdjustmentsDebouncedCommand}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Controls:ClarityAnalyzerSlider>
                     </StackPanel>
                 </TabItem>
 
