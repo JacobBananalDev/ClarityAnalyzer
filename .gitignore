@@ -105,3 +105,8 @@ dist/
 # ==========
 publish/
 *.csproj.user
+
+
+# Allow screenshots and media in assets folder
+!assets/
+!assets/*.png
